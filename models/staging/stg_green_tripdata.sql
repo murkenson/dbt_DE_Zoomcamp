@@ -27,7 +27,8 @@ select
     tolls_amount,
     improvement_surcharge,
     total_amount,
-    congestion_surcharge
+    congestion_surcharge,
+    cast(trip_type as integer) as trip_type
 
 from {{ source("staging", "green_taxi_2022") }}
 where vendorid is not null
