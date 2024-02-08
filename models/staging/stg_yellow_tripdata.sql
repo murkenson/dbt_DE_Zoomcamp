@@ -23,7 +23,8 @@ select
     tolls_amount,
     improvement_surcharge,
     total_amount,
-    congestion_surcharge
+    congestion_surcharge,
+    0 as trip_type
 
 from {{ source("staging", "yellow_cab_data") }}
 where vendorid is not null
