@@ -28,12 +28,11 @@ select
     improvement_surcharge,
     total_amount,
     congestion_surcharge,
-    cast(trip_type as integer) as trip_type
+    cast(trip_type as integer) as trip_type,
+    current_timestamp() as updated_at
 
 from {{ source("staging", "green_taxi_2022") }}
 where vendorid is not null
 
 -- dbt build --m <model.sql> --var 'is_test_run: false'
-{% if var('is_test_run', default=true) %} 
-        limit 100
-{% endif %}
+{% if var("is_test_run", default=true) %} limit 100 {% endif %}
