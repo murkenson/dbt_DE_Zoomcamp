@@ -1,4 +1,4 @@
-{{ config(materialized="incremental", unique_key="tripid") }}
+{{ config(materialized="incremental", unique_key="tripid", tags=["special"]) }}
 
 {{
     dbt_utils.log_info(
