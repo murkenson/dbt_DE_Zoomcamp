@@ -21,3 +21,6 @@ from {{ ref("stg_green_tripdata") }}
             "Finished transformation for the green_taxi_2022_incremental table"
         )
     }}
+
+
+select 1 

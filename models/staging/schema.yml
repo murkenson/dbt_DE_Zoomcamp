@@ -9,6 +9,13 @@ sources:
       - name: green_taxi_2022
       - name: yellow_cab_data
 
+  - name: staging_sec
+    database: ny-rides-marfanyan
+    schema: trips_data_all
+
+    tables:
+      - name: fhv_tripdata
+
 models:
   - name: stg_green_tripdata
     description: >
