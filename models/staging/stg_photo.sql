@@ -1,7 +1,8 @@
 {{
     config(
-        pre_hook=["{{ create_table_tmp('dbt_marfanian', 'stg_photo')}}"],
+        pre_hook=["{{ create_table_tmp('ny_taxi', 'stg_photo')}}"],
         materialized="table",
+        schema="ny_taxi",
     )
 }}
 
